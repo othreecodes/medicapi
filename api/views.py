@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 
-from api.models import Doctor, DoctorCategory
+from api.models import Doctor, DoctorCategory, HealthTip
 from . import serializers
 
 
@@ -18,3 +18,8 @@ class DoctorViewset(viewsets.ModelViewSet):
 class DoctorCategoryViewset(viewsets.ModelViewSet):
     serializer_class = serializers.DoctorCategorySerializer
     queryset = DoctorCategory.objects.all()
+
+
+class HealthTipViewset(viewsets.ModelViewSet):
+    serializer_class = serializers.HealthTipSerializer
+    queryset = HealthTip.objects.all()

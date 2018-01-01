@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from api.models import Doctor, DoctorCategory
+from api.models import Doctor, DoctorCategory, HealthTip
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -20,3 +20,10 @@ class DoctorCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = DoctorCategory
         fields = "__all__"
+
+
+class HealthTipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HealthTip
+        fields = "__all__"
+        read_only_fields = ('created', 'modified')
