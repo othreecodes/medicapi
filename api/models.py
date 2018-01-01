@@ -19,7 +19,7 @@ class Doctor(models.Model):
 
 class HealthTip(TimeStampedModel):
     title = models.CharField(max_length=256)
-    slug = AutoSlugField(populate_from=title)
+    slug = AutoSlugField(populate_from='title')
     content = models.TextField()
 
 
