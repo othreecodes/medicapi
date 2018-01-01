@@ -18,7 +18,7 @@ from django.urls import path,include
 from api import urls
 from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title='Pastebin API')
+schema_view = get_swagger_view(title='MedicArch API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(urls)),
