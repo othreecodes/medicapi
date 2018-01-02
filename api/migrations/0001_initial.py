@@ -7,7 +7,6 @@ import django_extensions.db.fields
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -34,8 +33,10 @@ class Migration(migrations.Migration):
             name='HealthTip',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
-                ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
+                ('created',
+                 django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
+                ('modified',
+                 django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
                 ('title', models.CharField(max_length=256)),
                 ('slug', django_extensions.db.fields.AutoSlugField(blank=True, editable=False, populate_from='title')),
                 ('content', models.TextField()),
@@ -49,11 +50,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='doctor',
             name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='api.DoctorCategory'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                    to='api.DoctorCategory'),
         ),
         migrations.AddField(
             model_name='doctor',
             name='user',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                    to=settings.AUTH_USER_MODEL),
         ),
     ]

@@ -1,16 +1,16 @@
-from rest_framework import exceptions
 from rest_framework.authentication import BaseAuthentication
 from rest_framework import HTTP_HEADER_ENCODING, exceptions
-from rest_framework.compat import authenticate
 from django.utils.six import text_type
 from django.utils.translation import ugettext_lazy as _
 
 
 def get_authorization_header(request):
+
     """
     Return request's 'Authorization:' header, as a bytestring.
     Hide some test client ickyness where the header can be unicode.
     """
+
     auth = request.META.get('HTTP_AUTHORIZATION', b'')
     if isinstance(auth, text_type):
         # Work around django test client oddness
