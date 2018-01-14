@@ -5,3 +5,5 @@ from . import models
 reg = admin.site.register
 reg(models.DoctorCategory)
 reg(models.Doctor)
+reg(models.DoctorRecommendation)
+reg(models.HealthTip)

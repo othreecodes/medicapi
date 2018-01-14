@@ -5,7 +5,7 @@ from rest_framework.decorators import list_route
 from rest_framework.response import Response
 
 from api.forms import FirebaseTokenForm
-from api.models import Doctor, DoctorCategory, HealthTip
+from api.models import Doctor, DoctorCategory, HealthTip,DoctorRecommendation
 from . import serializers
 
 
@@ -39,3 +39,7 @@ class DoctorCategoryViewset(viewsets.ModelViewSet):
 class HealthTipViewset(viewsets.ModelViewSet):
     serializer_class = serializers.HealthTipSerializer
     queryset = HealthTip.objects.all()
+
+class DoctorRecommendationViewSet(viewsets.ModelViewSet):
+    serializers_class = serializers.DoctorRecommendationSerializer
+    queryset = DoctorRecommendation.objects.all()

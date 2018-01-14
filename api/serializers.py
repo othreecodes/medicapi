@@ -2,7 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from api.models import Doctor, DoctorCategory, HealthTip
+from api.models import Doctor, DoctorCategory, HealthTip,DoctorRecommendation
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -36,5 +36,12 @@ class DoctorCategorySerializer(serializers.ModelSerializer):
 class HealthTipSerializer(serializers.ModelSerializer):
     class Meta:
         model = HealthTip
+        fields = "__all__"
+        read_only_fields = ('created', 'modified')
+
+
+class DoctorRecommendationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DoctorRecommendation
         fields = "__all__"
         read_only_fields = ('created', 'modified')
