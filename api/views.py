@@ -41,5 +41,5 @@ class HealthTipViewset(viewsets.ModelViewSet):
     queryset = HealthTip.objects.all()
 
 class DoctorRecommendationViewSet(viewsets.ModelViewSet):
-    serializers_class = serializers.DoctorRecommendationSerializer
+    serializer_class = serializers.DoctorRecommendationSerializer
     queryset = DoctorRecommendation.objects.all()
