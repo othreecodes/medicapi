@@ -25,7 +25,7 @@ class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
         fields = "__all__"
-
+        depth = 1
 
 class DoctorCategorySerializer(serializers.ModelSerializer):
     class Meta:

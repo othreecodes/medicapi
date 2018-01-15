@@ -12,6 +12,7 @@ class DoctorCategory(models.Model):
         return self.name
 
 
+
 class Doctor(models.Model):
     name = models.CharField(max_length=256)
     bio = models.TextField()
