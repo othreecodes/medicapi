@@ -10,9 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password', 'token') + (
+        fields = ('first_name', 'last_name', 'username', 'email', 'token') + (
         'is_staff', 'is_active', 'date_joined')
         read_only_fields = ('is_staff', 'is_active', 'date_joined')
+        
 
     def get_token(self, obj):
         try:
@@ -22,6 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class DoctorSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
     class Meta:
         model = Doctor
         fields = "__all__"
