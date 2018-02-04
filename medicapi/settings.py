@@ -29,10 +29,18 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 # ADMINS = ("")
 INSTALLED_APPS = [
-    'django.contrib.admin', 'django.contrib.auth',
-    'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework',
-    'api', 'rest_framework_swagger', 'django_extensions'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'api',
+    'rest_framework_swagger',
+    'django_extensions',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -123,11 +131,14 @@ QUICKBLOX_APP_SECRET = "JKuvXOCUscL7j-P"
 
 WOLFMAN_APP_ID = "WEYPX8-PEEA9EPAKH"
 
+CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL","cloudinary://597897783118458:IXbUW7BKVaGksM6k7Fk6IOzfdyE@hynezphri")
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/media/'  # or any prefix you choose
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 import django_heroku
 
 django_heroku.settings(locals())

@@ -16,8 +16,9 @@ class DoctorCategory(models.Model):
 class Doctor(models.Model):
     name = models.CharField(max_length=256)
     bio = models.TextField()
-    user = models.ForeignKey(blank=True, null=True, to=User, on_delete=models.CASCADE)
+    user = models.OneToOneField(blank=True, null=True, to=User, on_delete=models.CASCADE)
     category = models.ForeignKey(blank=True, null=True, to=DoctorCategory, on_delete=models.CASCADE)
+    image = models.ImageField(blank=True,null=True,default="default.jpg")
 
     # TODO: What other fields
     # objects = models.Manager()
