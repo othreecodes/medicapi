@@ -113,6 +113,16 @@ FIREBASE_PROJECT_ID = "medicarch-82960"
 FIREBASE_STORAGE_BUCKET = "medicarch-82960.appspot.com"
 FIREBASE_MESSAGING_SENDER_ID = "576787747317"
 
+
+GRITS_BASE_URL = "https://grits.eha.io:443/api/v1/public_diagnose"
+GRITS_API_KEY = "Cr9LPAtL"
+
+QUICKBLOX_APP_ID = "68242"
+QUICKBLOX_APP_KEY = "r-97n3knzFyJ8sn"
+QUICKBLOX_APP_SECRET = "JKuvXOCUscL7j-P"
+
+WOLFMAN_APP_ID = "WEYPX8-PEEA9EPAKH"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 

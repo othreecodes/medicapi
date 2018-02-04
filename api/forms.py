@@ -11,3 +11,9 @@ class FirebaseTokenForm(forms.Form):
     def save(self):
         token = self.cleaned_data['token']
         pass
+
+
+class BotProcessingForm(forms.Form):
+    pass
+    
+

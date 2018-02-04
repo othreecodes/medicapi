@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
 from django_extensions.db.models import TimeStampedModel
 
-
 class DoctorCategory(models.Model):
     name = models.CharField(max_length=256)
 
+    # objects = models.Manager()
     def __str__(self):
         return self.name
 
@@ -20,7 +20,7 @@ class Doctor(models.Model):
     category = models.ForeignKey(blank=True, null=True, to=DoctorCategory, on_delete=models.CASCADE)
 
     # TODO: What other fields
-
+    # objects = models.Manager()
     def __str__(self):
         return self.name
 
@@ -38,7 +38,7 @@ class FirebaseToken(models.Model):
     token = models.CharField(max_length=256)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     fcm_token = models.CharField(max_length=256,verbose_name="Firebase Messaging Token",blank=True,null=True)
-
+    
     def __str__(self):
         return self.user.username
 
@@ -50,6 +50,7 @@ class DoctorRecommendation(TimeStampedModel):
 
     def __str__(self):
         return self.title
+
 
 class Consultaion(models.Model):
     pass

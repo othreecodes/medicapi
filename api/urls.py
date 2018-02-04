@@ -12,4 +12,5 @@ router.register(r'recommendations', views.DoctorRecommendationViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path("bot/",views.BotView.as_view())
 ]

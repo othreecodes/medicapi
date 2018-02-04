@@ -47,3 +47,4 @@ class DoctorRecommendationSerializer(serializers.ModelSerializer):
         model = DoctorRecommendation
         fields = "__all__"
         read_only_fields = ('created', 'modified')
+        
