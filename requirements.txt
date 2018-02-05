@@ -34,3 +34,4 @@ wrapt==1.10.11
 yapf==0.20.0
 firebase-admin==2.7.0
 wolframalpha==3.0
+django-cloudinary-storage==0.2.3
