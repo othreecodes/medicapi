@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "medicarch-82960",
+    "private_key_id": "622fd6559121141be9c88a820f03391aba7982db",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzR9xFWK+cm5aU\nE5ZRtP0javHCB1dnlGcgNilvCBCuq5DBwlxP0YNaNKgtjTTsxNpRt50sPcv+6XxA\nuCA7TK9bnzjSyLMhS03uItG/LHGf8wCJuw4L5WFyCAZosz3YhG7/Vo4U5Fw9Jjn1\nq7wGbAZXlx9Y8kQ3N9hXiC/T+8YUl4x5JLPJOsGGxNlFiGm2D6x5EOvuDv9EdYNO\npCkZCq3gvBF6Phy7ugHgcOtSlDGAO2dOY7bvlPa9DUJifVer/23LWWOD/lrO1wMt\nagoYN7WeS8jHHbb9uJVPGivL7AsYEsJ41G5W06Jcywlm9lHaOycgxaeL8QpaxsPj\nKSL2kpD1AgMBAAECggEAI2HqEuSdKhEZ74kLGH6aHBCZ/JNy2F41WSnfVQq4MiTp\nmZf4nIcqv5WXYIAXIyh5tvmAQ1BB78IYc/Ry5gktLa23qwARvF8ulvJXx31nwmvU\n3hnk/IuNhxIW47iGWvJOLsYgHfbwzl+6PiZh4jmVKdnJRcZwmJ5ErAfUeqec0QjA\nTbR7C2hJM+yYZqgRjDz1oZxFQJWQpxCY0Q9ns3WxKp2U/kla9onBd4XNZHwHu1OC\nCzkSo4+j/iPgPbf9G2sx7s6n6x/zRzF2RyYEWgJcM/r58cmJwvaS9c43fXiVu3G3\nuUJdczelSGgEV6x6o88ug/UOr4I3//rvGUhbMUUzAQKBgQDZlZosxgBVkxTEAnE/\n+/oFGVAf9FkYWJ/ymYYox8u/i2M6q3z0keAq0ZUiunsJKF4ApxY2KV1kFW9YTya/\n84SkAP6pl6edF4D1+wb9jxKFOeHos7k4b4FTewiGV3asp/igAa2DlP6u1Cr/Q9Vj\nKin+oPU9mjs2snB6OrY3cDcd9QKBgQDS7wFU04MWXEPYxX+S5c+SSzIYoR5OqRvs\nuCQbYtu1ibU30BarhdtI6c/Lxmi6jDN9m6/u9LvODl3nMaGFMRp8ezKlqPzj8T51\npiqrl4uFgLVOP/w2TaV3vsxpW0LhHyWs3ACjqUM6y5T3PJSMaai3lLBQC2SPGQBx\nB90zaIrHAQKBgQDQB4PfmPOK3dP1z6v9k+moZFpCIvnoGBvc9EHbzaKVISyfVIRk\nxPABoF4pVQf7anftwdKvt/7NiNzrHsoarjY8I6NX/GJKBMXM6NP3K4p2jC/cr7DA\nL4QDj9dHsmoJi5NfUBtYeeTCvKHbazyi0hZSmAvBeStyEUsO4gGDoatg3QKBgQCC\nmh2W6gdmVuZjV5Wv3L7y88Am48uiJK73mOQyWLl047jiv+LpfM3TjYFtyIGbz6cq\nBLWgHMQTx2148o/xqf+eR6GKVOGQORTVP3d4GzL2DEU2GAQPk2/6fpaOPUVhoilv\nqCB1NR49T0QC+O15Kwqd8GBij0tKFs7hLV9Wr0oOAQKBgHG/J1gisT4oeteI280e\nzsxdTId3YmlhlTpIpsvy8JFofW5Z1eE/G+9Izx5Q8eKqQ7MNnbYROAzNrSJlJ7Cx\npRi287kiFikqJpB9Va3T9+Uw6RTr6FRxvMtNcwldNOsu++KRnJ4odSLvygGaJrnI\n/BVyV3yVZXUm1n3EgEIwVlzE\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-91w7m@medicarch-82960.iam.gserviceaccount.com",
+    "client_id": "116711684933514977636",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-91w7m%40medicarch-82960.iam.gserviceaccount.com"
+}

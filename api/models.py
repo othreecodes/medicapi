@@ -41,7 +41,7 @@ class FirebaseToken(models.Model):
     fcm_token = models.CharField(max_length=256,verbose_name="Firebase Messaging Token",blank=True,null=True)
     
     def __str__(self):
-        return self.user.username
+        return self.user.first_name
 
 class DoctorRecommendation(TimeStampedModel):
     doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE)
