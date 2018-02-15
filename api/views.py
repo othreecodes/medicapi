@@ -7,7 +7,7 @@ import requests
 from api.forms import FirebaseTokenForm
 from api.models import Doctor, DoctorCategory, HealthTip, DoctorRecommendation
 from . import serializers
-from .forms import BotProcessingForm
+# from .forms import BotProcessingForm
 # from api.mixins import BotMixin
 from api.mixins import BotMixin
 

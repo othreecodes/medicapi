@@ -29,18 +29,11 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 # ADMINS = ("")
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'api',
-    'rest_framework_swagger',
-    'django_extensions',
-    'cloudinary_storage',
-    'cloudinary',
+    'django.contrib.admin', 'django.contrib.auth',
+    'django.contrib.contenttypes', 'django.contrib.sessions',
+    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework',
+    'api', 'rest_framework_swagger', 'django_extensions', 'cloudinary_storage',
+    'cloudinary', 'froala_editor'
 ]
 
 MIDDLEWARE = [
@@ -135,7 +128,14 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL","cloudinary://597897783118458:I
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+FROALA_EDITOR_PLUGINS = ('align', 'char_counter', 'code_beautifier',
+                         'code_view', 'colors', 'draggable', 'emoticons',
+                         'entities', 'file', 'font_family', 'font_size',
+                         'fullscreen', 'image_manager', 'image',
+                         'inline_style', 'line_breaker', 'link', 'lists',
+                         'paragraph_format', 'paragraph_style', 'quick_insert',
+                         'quote', 'save', 'table', 'url', 'video')
+                         
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'  # or any prefix you choose
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
