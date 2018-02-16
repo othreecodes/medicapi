@@ -28,7 +28,11 @@ class FirebaseTokenForm(forms.Form):
     def save(self):
         token = self.cleaned_data['token']
 
-        user,is_new = User.objects.get_or_create(username=self.user.uid,first_name=self.user.display_name)
+        if self.user.display_name:
+            user,is_new = User.objects.get_or_create(username=self.user.uid,first_name=self.user.display_name)
+        else:
+            user, is_new = User.objects.get_or_create(
+                username=self.user.uid, first_name=self.user.email)
 
         if is_new:
             models.FirebaseToken.objects.create(user = user,token=self.user.uid)
@@ -43,4 +47,3 @@ class FirebaseTokenForm(forms.Form):
 class HealthTipFrom(forms.ModelForm):
     title = forms.CharField()
     content = forms.CharField(widget=FroalaEditor)
-
