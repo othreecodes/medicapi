@@ -38,7 +38,7 @@ class BotMixin(object):
         return {
             "disease": disease,
             "details": res.details or None,
-            "treatment": self.get_treatment(disease)
+            "treatment": "Consult a Doctor"
         }
 
     def get_treatment(self, disease):
