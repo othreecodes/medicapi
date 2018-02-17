@@ -37,3 +37,5 @@ wolframalpha==3.0
 django-cloudinary-storage==0.2.3
 Pillow==5.0.0
 django-froala-editor==2.7.5
+pyfcm==1.4.4
+

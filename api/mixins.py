@@ -12,6 +12,7 @@ class BotMixin(object):
         data = response.json()
         diseases = data.get('diseases')
         disease_name = ""
+        self.disease_names = []
         prob = 0
         d_index = None
         if diseases:
@@ -23,6 +24,7 @@ class BotMixin(object):
                 ]) + sum([x.get('score') or 0
                           for x in disease['keywords']]) > prob:
                     disease_name = disease['name']
+                    self.disease_names.append(disease_name)
                     prob = disease['probability']
                     d_index = index
 
@@ -33,11 +35,11 @@ class BotMixin(object):
     def get_wolfman_data(self, disease):
         client = wolframalpha.Client(settings.WOLFMAN_APP_ID)
 
-        res = client.query(disease)
+        # res = client.query(disease)
 
         return {
-            "disease": disease,
-            "details": res.details or None,
+            "disease": str(self.disease_names),
+            "details": None,
             "treatment": "Consult a Doctor"
         }
 

@@ -24,6 +24,7 @@ class UserViewset(viewsets.ModelViewSet):
             return Response(form.save())
 
         return Response(status=400, data=form.errors)
+ 
 
 
 class DoctorViewset(viewsets.ModelViewSet):
