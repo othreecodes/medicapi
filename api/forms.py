@@ -1,6 +1,6 @@
 from django import forms
 import firebase_admin
-from firebase_admin import App,auth,
+from firebase_admin import App,auth
 from firebase_admin import credentials
 from django.conf import settings
 import os
@@ -14,7 +14,6 @@ cred = credentials.Certificate(os.path.join(settings.BASE_DIR,"google-services.j
 firebase_admin.initialize_app(cred)
 
  
-push_service.get_registration_id_info
 class FirebaseTokenForm(forms.Form):
     token = forms.CharField(required=True)
     fcm_token = forms.CharField(required=False)
