@@ -13,7 +13,7 @@ from . import models
 cred = credentials.Certificate(os.path.join(settings.BASE_DIR,"google-services.json"))
 firebase_admin.initialize_app(cred)
 
- 
+
 class FirebaseTokenForm(forms.Form):
     token = forms.CharField(required=True)
     fcm_token = forms.CharField(required=False)
@@ -38,7 +38,9 @@ class FirebaseTokenForm(forms.Form):
 
         if is_new:
             models.FirebaseToken.objects.create(user = user,token=self.user.uid)
-
+        else:
+            models.FirebaseToken.objects.filter(user=user).update(fcm_token=fcm_token)
+            
         # models.
 
 
