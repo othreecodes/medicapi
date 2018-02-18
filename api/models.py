@@ -30,6 +30,7 @@ class HealthTip(TimeStampedModel):
     title = models.CharField(max_length=256)
     slug = AutoSlugField(populate_from='title')
     content = models.TextField()
+    image = models.ImageField(blank=True, null=True, default="default.jpg")
 
     def __str__(self):
         return self.slug
@@ -39,7 +40,7 @@ class FirebaseToken(models.Model):
     token = models.CharField(max_length=256)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     fcm_token = models.CharField(max_length=256,verbose_name="Firebase Messaging Token",blank=True,null=True)
-    
+
     def __str__(self):
         return self.user.first_name
 
