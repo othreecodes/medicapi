@@ -123,7 +123,7 @@ QUICKBLOX_APP_KEY = "r-97n3knzFyJ8sn"
 QUICKBLOX_APP_SECRET = "JKuvXOCUscL7j-P"
 
 WOLFMAN_APP_ID = "WEYPX8-PEEA9EPAKH"
-
+STOLEN_HEALTH_MAP_API_KEY = "956348929582245025 "
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL","cloudinary://597897783118458:IXbUW7BKVaGksM6k7Fk6IOzfdyE@hynezphri")
 
 # Static files (CSS, JavaScript, Images)
@@ -135,7 +135,7 @@ FROALA_EDITOR_PLUGINS = ('align', 'char_counter', 'code_beautifier',
                          'inline_style', 'line_breaker', 'link', 'lists',
                          'paragraph_format', 'paragraph_style', 'quick_insert',
                          'quote', 'save', 'table', 'url', 'video')
-                         
+
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'  # or any prefix you choose
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

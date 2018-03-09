@@ -10,7 +10,7 @@ from . import serializers
 # from .forms import BotProcessingForm
 # from api.mixins import BotMixin
 from api.mixins import BotMixin
-
+import requests
 
 class UserViewset(viewsets.ModelViewSet):
     serializer_class = serializers.UserSerializer
@@ -24,7 +24,7 @@ class UserViewset(viewsets.ModelViewSet):
             return Response(form.save())
 
         return Response(status=400, data=form.errors)
- 
+
 
 
 class DoctorViewset(viewsets.ModelViewSet):
@@ -60,3 +60,17 @@ class BotView(views.APIView, BotMixin):
 
         if query == "diagnose":
             return Response(self.fetch_data_from_grits(data.get('content')))
+
+    @list_route(methods=['POST'], url_path="poll")
+    def poll(self, request, *args, **kwargs):
+
+        response = requests.get(
+            "http://www.healthmap.org/HMapi.php?auth=956348929582245025&striphtml=1"
+        )
+
+        nig = [f for f in response.json() if f['country'] == "Nigeria"]
+
+        return Response(nig)
+
+
+    
