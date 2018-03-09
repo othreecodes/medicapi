@@ -60,9 +60,8 @@ class BotView(views.APIView, BotMixin):
 
         if query == "diagnose":
             return Response(self.fetch_data_from_grits(data.get('content')))
-
-    @list_route(methods=['POST'], url_path="poll")
-    def poll(self, request, *args, **kwargs):
+ 
+    def get(self, request):
 
         response = requests.get(
             "http://www.healthmap.org/HMapi.php?auth=956348929582245025&striphtml=1"
@@ -73,4 +72,3 @@ class BotView(views.APIView, BotMixin):
         return Response(nig)
 
 
-    
