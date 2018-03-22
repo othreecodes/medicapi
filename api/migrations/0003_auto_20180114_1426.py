@@ -7,7 +7,6 @@ import django_extensions.db.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('api', '0002_firebasetoken'),
@@ -17,13 +16,43 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='DoctorRecommendation',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
-                ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
+                (
+                    'id',
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
+                (
+                    'created',
+                    django_extensions.db.fields.CreationDateTimeField(
+                        auto_now_add=True, verbose_name='created'
+                    ),
+                ),
+                (
+                    'modified',
+                    django_extensions.db.fields.ModificationDateTimeField(
+                        auto_now=True, verbose_name='modified'
+                    ),
+                ),
                 ('title', models.CharField(max_length=256)),
                 ('content', models.TextField()),
-                ('doctor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.Doctor')),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    'doctor',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to='api.Doctor',
+                    ),
+                ),
+                (
+                    'owner',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
                 'ordering': ('-modified', '-created'),
@@ -34,6 +63,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='firebasetoken',
             name='fcm_token',
-            field=models.CharField(blank=True, max_length=256, null=True, verbose_name='Firebase Messaging Token'),
+            field=models.CharField(
+                blank=True,
+                max_length=256,
+                null=True,
+                verbose_name='Firebase Messaging Token',
+            ),
         ),
     ]

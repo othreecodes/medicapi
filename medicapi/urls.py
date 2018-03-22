@@ -19,11 +19,12 @@ from api import urls
 from rest_framework_swagger.views import get_swagger_view
 import froala_editor
 from froala_editor import urls as fuls
+
 schema_view = get_swagger_view(title='MedicArch API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(urls)),
     path('', schema_view),
-    path('froala_editor/', include(froala_editor.urls))
+    path('froala_editor/', include(froala_editor.urls)),
 ]

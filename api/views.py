@@ -7,10 +7,14 @@ import requests
 from api.forms import FirebaseTokenForm
 from api.models import Doctor, DoctorCategory, HealthTip, DoctorRecommendation
 from . import serializers
+
 # from .forms import BotProcessingForm
 # from api.mixins import BotMixin
+from django.conf import settings
 from api.mixins import BotMixin
 import requests
+import arrow
+
 
 class UserViewset(viewsets.ModelViewSet):
     serializer_class = serializers.UserSerializer
@@ -26,7 +30,6 @@ class UserViewset(viewsets.ModelViewSet):
         return Response(status=400, data=form.errors)
 
 
-
 class DoctorViewset(viewsets.ModelViewSet):
     serializer_class = serializers.DoctorSerializer
     queryset = Doctor.objects.all()
@@ -39,7 +42,9 @@ class DoctorCategoryViewset(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         return Response(
             serializers.DoctorSerializer(
-                self.get_object().doctor_set.all(), many=True).data)
+                self.get_object().doctor_set.all(), many=True
+            ).data
+        )
 
 
 class HealthTipViewset(viewsets.ModelViewSet):
@@ -53,6 +58,7 @@ class DoctorRecommendationViewSet(viewsets.ModelViewSet):
 
 
 class BotView(views.APIView, BotMixin):
+
     def post(self, request):
         data = request.data
 
@@ -60,15 +66,19 @@ class BotView(views.APIView, BotMixin):
 
         if query == "diagnose":
             return Response(self.fetch_data_from_grits(data.get('content')))
- 
-    def get(self, request):
 
+    def get(self, request):
         response = requests.get(
             "http://www.healthmap.org/HMapi.php?auth=956348929582245025&striphtml=1"
         )
 
         nig = [f for f in response.json() if f['country'] == "Nigeria"]
 
-        return Response(nig)
+        # import pdb; pdb.set_trace()
+        vf = [x['alerts'] for x in nig]
+        newlist = sum(vf, [])
+        self.send_message_to_topic(topic="news", data=newlist)
 
 
+
+        return Response(newlist)

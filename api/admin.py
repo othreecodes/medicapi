@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import models
 from . import forms
+
 # Register your models here.
 
 reg = admin.site.register
@@ -13,6 +14,7 @@ reg(models.DoctorRecommendation)
 class HealthTipAdmin(admin.ModelAdmin):
     list_display = ['title']
     form = forms.HealthTipFrom
+
 
 # reg(models.HealthTip)
 reg(models.FirebaseToken)

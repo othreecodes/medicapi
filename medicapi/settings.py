@@ -29,11 +29,19 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 # ADMINS = ("")
 INSTALLED_APPS = [
-    'django.contrib.admin', 'django.contrib.auth',
-    'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework',
-    'api', 'rest_framework_swagger', 'django_extensions', 'cloudinary_storage',
-    'cloudinary', 'froala_editor'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'api',
+    'rest_framework_swagger',
+    'django_extensions',
+    'cloudinary_storage',
+    'cloudinary',
+    'froala_editor',
 ]
 
 MIDDLEWARE = [
@@ -59,9 +67,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+            ]
         },
-    },
+    }
 ]
 
 WSGI_APPLICATION = 'medicapi.wsgi.application'
@@ -81,16 +89,14 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
+    },
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'
     },
 ]
 
@@ -107,6 +113,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+FCM_API_KEY = "AIzaSyA9_WkXOj0rQC_CVTHHr0nSjt-DcM0EwRI"
 FIREBASE_API_KEY = "AIzaSyDEkbXOYi6-cR337xZvnK_VfUzDEcZySUg"
 FIREBASE_AUTH_DOMAIN = "medicarch-82960.firebaseapp.com"
 FIREBASE_DATABSE_URL = "https://medicarch-82960.firebaseio.com"
@@ -124,17 +131,41 @@ QUICKBLOX_APP_SECRET = "JKuvXOCUscL7j-P"
 
 WOLFMAN_APP_ID = "WEYPX8-PEEA9EPAKH"
 STOLEN_HEALTH_MAP_API_KEY = "956348929582245025 "
-CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL","cloudinary://597897783118458:IXbUW7BKVaGksM6k7Fk6IOzfdyE@hynezphri")
+CLOUDINARY_URL = os.environ.get(
+    "CLOUDINARY_URL",
+    "cloudinary://597897783118458:IXbUW7BKVaGksM6k7Fk6IOzfdyE@hynezphri",
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-FROALA_EDITOR_PLUGINS = ('align', 'char_counter', 'code_beautifier',
-                         'code_view', 'colors', 'draggable', 'emoticons',
-                         'entities', 'file', 'font_family', 'font_size',
-                         'fullscreen', 'image_manager', 'image',
-                         'inline_style', 'line_breaker', 'link', 'lists',
-                         'paragraph_format', 'paragraph_style', 'quick_insert',
-                         'quote', 'save', 'table', 'url', 'video')
+FROALA_EDITOR_PLUGINS = (
+    'align',
+    'char_counter',
+    'code_beautifier',
+    'code_view',
+    'colors',
+    'draggable',
+    'emoticons',
+    'entities',
+    'file',
+    'font_family',
+    'font_size',
+    'fullscreen',
+    'image_manager',
+    'image',
+    'inline_style',
+    'line_breaker',
+    'link',
+    'lists',
+    'paragraph_format',
+    'paragraph_style',
+    'quick_insert',
+    'quote',
+    'save',
+    'table',
+    'url',
+    'video',
+)
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'  # or any prefix you choose

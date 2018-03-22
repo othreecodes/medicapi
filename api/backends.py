@@ -5,7 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 
 
 def get_authorization_header(request):
-
     """
     Return request's 'Authorization:' header, as a bytestring.
     Hide some test client ickyness where the header can be unicode.
@@ -37,14 +36,19 @@ class FirebaseAuth(BaseAuthentication):
         if len(auth) == 1:
             msg = _('Invalid token header. No credentials provided.')
             raise exceptions.AuthenticationFailed(msg)
+
         elif len(auth) > 2:
-            msg = _('Invalid token header. Token string should not contain spaces.')
+            msg = _(
+                'Invalid token header. Token string should not contain spaces.'
+            )
             raise exceptions.AuthenticationFailed(msg)
 
         try:
             token = auth[1].decode()
         except UnicodeError:
-            msg = _('Invalid token header. Token string should not contain invalid characters.')
+            msg = _(
+                'Invalid token header. Token string should not contain invalid characters.'
+            )
             raise exceptions.AuthenticationFailed(msg)
 
         return self.authenticate_credentials(token)
